@@ -6,6 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component';
+import { HeaderComponent } from './componentes/header/header.component';
+import { HomeComponent } from './componentes/home/home.component';
+import { ErroresComponent } from './componentes/errores/errores.component';
+import { FooterComponent } from './componentes/footer/footer.component';
 
 
 @NgModule({
@@ -13,7 +17,11 @@ import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component';
     AppComponent,
     LoginComponent,
     QuienSoyComponent,
-    LoginComponent
+    HeaderComponent,
+    HomeComponent,
+    FooterComponent,
+    ErroresComponent
+    
   ],
   imports: [
     BrowserModule,
