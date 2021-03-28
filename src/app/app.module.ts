@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import {Routes,RouterModule} from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,7 +16,6 @@ import { FooterComponent } from './componentes/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     QuienSoyComponent,
     HeaderComponent,
     HomeComponent,
@@ -27,6 +27,7 @@ import { FooterComponent } from './componentes/footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+  
   
   ],
   providers: [],
