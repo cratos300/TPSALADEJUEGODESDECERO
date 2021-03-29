@@ -9,6 +9,7 @@ const routes: Routes = [
 {path:'',component: HomeComponent},
 {path:'login',component: LoginComponent},
 {path:'quiensoy',component: QuienSoyComponent},
+{path:'home',component: HomeComponent},
 {path:'**',component: ErroresComponent}
 ];
 
