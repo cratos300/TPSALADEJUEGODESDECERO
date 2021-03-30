@@ -11,6 +11,7 @@ import { HeaderComponent } from './componentes/header/header.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { ErroresComponent } from './componentes/errores/errores.component';
 import { FooterComponent } from './componentes/footer/footer.component';
+import { RegistrarComponent } from './componentes/registrar/registrar.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FooterComponent } from './componentes/footer/footer.component';
     HeaderComponent,
     HomeComponent,
     FooterComponent,
-    ErroresComponent
+    ErroresComponent,
+    RegistrarComponent
     
   ],
   imports: [
