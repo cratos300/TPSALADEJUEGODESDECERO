@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Mensaje } from 'src/app/clases/mensaje';
+import { AuthService } from 'src/app/services/auth.service';
+import { MensajesService } from 'src/app/services/mensajes.service';
 
 @Component({
   selector: 'app-home',
@@ -6,8 +10,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+ 
+  email:string = "";
+  constructor() { 
+  }
 
   ngOnInit(): void {
   }

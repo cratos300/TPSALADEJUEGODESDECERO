@@ -12,6 +12,10 @@ import { HomeComponent } from './componentes/home/home.component';
 import { ErroresComponent } from './componentes/errores/errores.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { RegistrarComponent } from './componentes/registrar/registrar.component';
+import { AuthService } from './services/auth.service';
+import { AngularFireModule} from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
 
 
 @NgModule({
@@ -22,17 +26,18 @@ import { RegistrarComponent } from './componentes/registrar/registrar.component'
     HomeComponent,
     FooterComponent,
     ErroresComponent,
-    RegistrarComponent
-    
+    RegistrarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-  
-  
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
