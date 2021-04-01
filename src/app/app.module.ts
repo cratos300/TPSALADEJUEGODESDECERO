@@ -14,7 +14,7 @@ import { FooterComponent } from './componentes/footer/footer.component';
 import { RegistrarComponent } from './componentes/registrar/registrar.component';
 import { AuthService } from './services/auth.service';
 import { AngularFireModule} from '@angular/fire';
-import { environment } from 'src/environments/environment';
+import { firebase } from 'src/environments/environment';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 
 
@@ -33,7 +33,7 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(firebase),
     AngularFireDatabaseModule,
     
   ],
