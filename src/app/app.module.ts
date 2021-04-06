@@ -16,6 +16,13 @@ import { AuthService } from './services/auth.service';
 import { AngularFireModule} from '@angular/fire';
 import { firebase } from 'src/environments/environment';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {MensajesService} from './services/mensajes.service';
+import { InicioComponent } from './componentes/inicio/inicio.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
+
+
+
 
 
 @NgModule({
@@ -27,9 +34,12 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
     FooterComponent,
     ErroresComponent,
     RegistrarComponent,
-    LoginComponent
+    LoginComponent,
+    InicioComponent
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -37,7 +47,7 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
     AngularFireDatabaseModule,
     
   ],
-  providers: [AuthService],
+  providers: [AuthService,MensajesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

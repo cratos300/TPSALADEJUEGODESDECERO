@@ -15,6 +15,7 @@ export class RegistrarComponent implements OnInit {
   mensaje:Mensaje = new Mensaje();
   email:string = "";
   repetido:string = "";
+  guardado:any;
   constructor(private router:Router,private authservice:AuthService,private mensajeService:MensajesService) { 
   }
 
@@ -22,20 +23,16 @@ export class RegistrarComponent implements OnInit {
   }
   EnviarMensaje()
   {
-    console.log(this.mensaje.pw);
-    console.log(this.repetido);
-    
-    
     if(this.mensaje.pw == this.repetido)
     {
-      this.mensajeService.create(this.mensaje).then(()=>{
-        console.log("Mensaje enviado");
-      })
-      this.authservice.crearUsuario(this.mensaje.correo,this.mensaje.pw).then(()=>{
-        this.router.navigate(['/home']);
+      this.authservice.crearUsuario(this.mensaje.correo,this.mensaje.pw).then((data:any)=>{
+        this.mensaje.pw = data.user.uid;
+        this.mensajeService.create(this.mensaje).then(()=>{
+          this.router.navigate(['/home']);
+        })
       }).catch(err =>{
         alert(err);
-      });
+      })
     }
     else
     {
