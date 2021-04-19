@@ -16,6 +16,9 @@ export class RegistrarComponent implements OnInit {
   email:string = "";
   repetido:string = "";
   guardado:any;
+  unUsuario: Mensaje = new Mensaje();
+  guardar!:string;
+
   constructor(private router:Router,private authservice:AuthService,private mensajeService:MensajesService) { 
   }
 
@@ -30,6 +33,11 @@ export class RegistrarComponent implements OnInit {
         this.guardado = this.mensajeService.create(this.mensaje);
         if(this.guardado != "")
         {
+          this.unUsuario.correo = data.user.email;
+          this.unUsuario.pw = data.user.uid;
+          this.guardar =  JSON.stringify(this.unUsuario);
+          localStorage.setItem("usuario",this.guardar);
+          this.authservice.boolean = true;
           this.router.navigate(['/home']);
         }
       }).catch(err =>{
