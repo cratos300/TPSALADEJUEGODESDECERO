@@ -27,9 +27,11 @@ export class RegistrarComponent implements OnInit {
     {
       this.authservice.crearUsuario(this.mensaje.correo,this.mensaje.pw).then((data:any)=>{
         this.mensaje.pw = data.user.uid;
-        this.mensajeService.create(this.mensaje).then(()=>{
+        this.guardado = this.mensajeService.create(this.mensaje);
+        if(this.guardado != "")
+        {
           this.router.navigate(['/home']);
-        })
+        }
       }).catch(err =>{
         alert(err);
       })

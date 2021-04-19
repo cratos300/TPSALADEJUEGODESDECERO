@@ -2,17 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ErroresComponent } from './componentes/errores/errores.component';
 import { HomeComponent } from './componentes/home/home.component';
-import { LoginComponent } from './componentes/login/login.component';
 import {QuienSoyComponent} from './componentes/quien-soy/quien-soy.component';
-import {RegistrarComponent} from './componentes/registrar/registrar.component';
 import {InicioComponent} from './componentes/inicio/inicio.component';
+import { DeslogearComponent } from './componentes/deslogear/deslogear.component';
 
 const routes: Routes = [
 {path:'',component: InicioComponent},
-{path:'login',component: LoginComponent},
+{path:'deslogear',component:DeslogearComponent},
 {path:'quiensoy',component: QuienSoyComponent},
 {path:'home',component: HomeComponent},
-{path:'registrar',component: RegistrarComponent},
+{path: 'ingreso', loadChildren: () => import('./ingreso/ingreso.module').then(m => m.IngresoModule) },
 {path:'**',component: ErroresComponent}
 ];
 
