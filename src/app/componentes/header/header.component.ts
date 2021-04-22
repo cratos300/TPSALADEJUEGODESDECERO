@@ -26,7 +26,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
   ancla()
   {
     document.getElementById("visit")?.scrollIntoView(); 

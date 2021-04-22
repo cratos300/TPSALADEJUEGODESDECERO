@@ -1,0 +1,13 @@
+<p>listado Real Time!</p>
+<ul class="list-group">
+    <li
+      class="list-group-item"
+      *ngFor="let mensaje of listadoMensajes; let i = index"
+      [class.active]="i == currentIndex"
+    >
+    <span>{{mensaje.email}} : {{mensaje.mensaje}}</span>
+    <br>
+    <span> {{ mensaje.fecha }}  </span>
+     
+    </li>
+  </ul>

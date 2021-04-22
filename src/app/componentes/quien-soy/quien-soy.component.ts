@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuienSoyComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    alert("EN COMPONENTE QUIEN SOY");
+  }
 
   ngOnInit() {
   }

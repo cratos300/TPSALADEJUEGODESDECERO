@@ -2,3 +2,12 @@
 {
     height: 70vh;
 }
+.scroll {
+    background-color: white;
+    width: 300px;
+    height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: center;
+    
+  }

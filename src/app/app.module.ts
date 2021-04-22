@@ -21,6 +21,9 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { DeslogearComponent } from './componentes/deslogear/deslogear.component';
+import { ChatfirestoreComponent } from './componentes/chatfirestore/chatfirestore.component';
+import { ListadoRealtimeComponent } from './componentes/listado-realtime/listado-realtime.component';
+
 
 
 
@@ -36,6 +39,8 @@ import { DeslogearComponent } from './componentes/deslogear/deslogear.component'
     ErroresComponent,
     InicioComponent,
     DeslogearComponent,
+    ChatfirestoreComponent,
+    ListadoRealtimeComponent
     
   ],
   imports: [

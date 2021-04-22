@@ -36,7 +36,11 @@ export class LoginComponent implements OnInit {
 
     this.grande = this.mensajeService.getAll();
     console.log(this.grande);
-    
-    
   }
+  Hardcodear()
+  {
+    this.email = "hernan@test.com";
+    this.password = "123456";
+  }
+
 }
