@@ -12,6 +12,7 @@ const routes: Routes = [
 {path:'quiensoy',component: QuienSoyComponent},
 {path:'home',component: HomeComponent},
 {path: 'ingreso', loadChildren: () => import('./ingreso/ingreso.module').then(m => m.IngresoModule) },
+{path: 'Juegos', loadChildren: () => import('./Juegos/juegos.module').then(m => m.JuegosModule) },
 {path:'**',component: ErroresComponent}
 ];
 

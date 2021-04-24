@@ -23,6 +23,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DeslogearComponent } from './componentes/deslogear/deslogear.component';
 import { ChatfirestoreComponent } from './componentes/chatfirestore/chatfirestore.component';
 import { ListadoRealtimeComponent } from './componentes/listado-realtime/listado-realtime.component';
+import { TatetiComponent } from './Juegos/page/tateti/tateti.component';
+import { PiedraPapeloTijeraComponent } from './Juegos/page/piedra-papelo-tijera/piedra-papelo-tijera.component';
+import { ChatCompletoComponent } from './componentes/chat-completo/chat-completo.component';
+import { Listado2Component } from './componentes/listado2/listado2.component';
+import { Chatcompleto2Component } from './componentes/chatcompleto2/chatcompleto2.component';
+
 
 
 
@@ -40,7 +46,8 @@ import { ListadoRealtimeComponent } from './componentes/listado-realtime/listado
     InicioComponent,
     DeslogearComponent,
     ChatfirestoreComponent,
-    ListadoRealtimeComponent
+    ListadoRealtimeComponent,
+    ChatCompletoComponent
     
   ],
   imports: [

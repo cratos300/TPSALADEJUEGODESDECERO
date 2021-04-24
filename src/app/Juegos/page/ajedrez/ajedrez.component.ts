@@ -2,16 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { MensajesRealtimeService } from 'src/app/services/mensajes-realtime.service';
 
 @Component({
-  selector: 'app-inicio',
-  templateUrl: './inicio.component.html',
-  styleUrls: ['./inicio.component.css']
+  selector: 'app-ajedrez',
+  templateUrl: './ajedrez.component.html',
+  styleUrls: ['./ajedrez.component.css']
 })
-export class InicioComponent implements OnInit {
+export class AjedrezComponent implements OnInit {
 
   constructor(private cambiarmensajereal:MensajesRealtimeService)
-   {
-      
-   }
+  {
+    this.cambiarmensajereal.dbPath = "/MensajesAjedrez";
+  }
 
   ngOnInit(): void {
   }

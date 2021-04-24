@@ -4,28 +4,28 @@ import { MensajesRealtimeService } from '../../services/mensajes-realtime.servic
 import { map } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-listado-realtime',
-  templateUrl: './listado-realtime.component.html',
-  styleUrls: ['./listado-realtime.component.css']
+  selector: 'app-listado2',
+  templateUrl: './listado2.component.html',
+  styleUrls: ['./listado2.component.css']
 })
-export class ListadoRealtimeComponent implements OnInit {
+export class Listado2Component implements OnInit {
 
+  
   listadoMensajes?: any[];
   mensajeActual?: MensajeChat;
   currentIndex = -1;
   title = '';
-  dato:any;
+  data:any;
 
-  constructor(private servicioRealTime:MensajesRealtimeService) { 
-    this.dato = localStorage.getItem("usuario");
-    this.dato = JSON.parse(this.dato);
+  constructor(private servicioRealTime:MensajesRealtimeService)
+  {
+    this.data = localStorage.getItem("usuario");
+    this.data = JSON.parse(this.data);
     this.cargarMensajes();
   }
 
   ngOnInit(): void {
-    this.cargarMensajes();
   }
-
   cargarMensajes(): void {
     this.servicioRealTime.getAll().snapshotChanges().pipe(
       map(changes =>
@@ -36,12 +36,14 @@ export class ListadoRealtimeComponent implements OnInit {
     ).subscribe(data => {
       this.listadoMensajes = data;
       data.forEach(element => {
-        if(element.email == this.dato.correo)
+        if(element.email == this.data.correo)
         {
           element.email = "yo";
         }
         console.log(element.email);
       });
+      
+  
       
     });
   }

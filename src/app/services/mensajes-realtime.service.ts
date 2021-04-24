@@ -7,30 +7,35 @@ import { MensajeChat } from '../clases/mensaje-chat';
 })
 export class MensajesRealtimeService {
 
-  private dbPath = '/MensajesReal';
+  public dbPath = '/MensajesGeneral';
 
-  MensajesRef: AngularFireList<MensajeChat>;
+  MensajesRef!: AngularFireList<MensajeChat>;
 
   constructor(private db: AngularFireDatabase) {
-    this.MensajesRef = db.list(this.dbPath);
+    
    }
    getAll(): AngularFireList<MensajeChat> {
+    this.MensajesRef = this.db.list(this.dbPath);
     return this.MensajesRef;
   }
 
   create(unMensajes: MensajeChat): any {
+    this.MensajesRef = this.db.list(this.dbPath);
     return this.MensajesRef.push(unMensajes);
   }
 
   update(key: string, value: any): Promise<void> {
+    this.MensajesRef = this.db.list(this.dbPath);
     return this.MensajesRef.update(key, value);
   }
 
   delete(key: string): Promise<void> {
+    this.MensajesRef = this.db.list(this.dbPath);
     return this.MensajesRef.remove(key);
   }
 
   deleteAll(): Promise<void> {
+    this.MensajesRef = this.db.list(this.dbPath);
     return this.MensajesRef.remove();
   }
 }

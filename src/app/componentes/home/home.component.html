@@ -1,9 +1,39 @@
-<div *ngIf="viendo()">
-<div class="tamañolo">
-    <h1>HOME</h1>
-    <div class="scroll">
-    <app-listado-realtime></app-listado-realtime>
-</div>
-<app-chatfirestore></app-chatfirestore>
-</div>
-</div>            
+  <br>
+<div *ngIf="viendo()"></div>
+    <h1>HOMEEE</h1>
+
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-md-3">
+        <h2>PiedraPapelTijera</h2>
+        <p>A "Piedra, papel o tijeras" se juega de dos en dos. Los jugadores se deben poner uno frente al otro con una mano a la espalda y decir en alto: piedra, papel o tijera, justo al acabar la frase enseñarán las manos y verán quien gana. Si los dos jugadores sacan la misma figura ..................................</p>
+        <img class="chico"  src="../../../assets/piedrapapeltijera.svg" alt="PiedraPapelTijera">
+        <p><a class="but btn btn-secondary" [routerLink]="['/Juegos/piedrapapeltijera']" role="button">JUGAR&raquo;</a></p>
+      </div>
+      <div class="col-md-3">
+        <h2>Tateti</h2>
+        <p>El tateti -o tres en raya- es un juego bastante simple. Consta de un tablero de 9 casillas donde dos jugadores se turnan para realizar sus movimientos. El objetivo es conseguir colocar tres fichas propias en línea -ya sea vertical, horizontal o diagonal- antes que el contrario.................................</p>
+        <img class="chico"  src="../../../assets/tateti.svg" alt="">
+        <p><a class="but btn btn-secondary" [routerLink]="['/Juegos/tateti']" role="button">JUGAR&raquo;</a></p>
+      </div>
+      <div class="col-md-3">
+        <h2>Ajedrez</h2>
+        <p>El ajedrez es un juego para dos jugadores en un tablero con 32 piezas (16 para cada jugador) de seis tipos. Cada pieza se mueve de manera diferente. El objetivo del juego es dar jaque mate, es decir, amenazar al rey del oponente con la captura hasta que sea inevitable...........................................</p>
+        <img class="chico"  src="../../../assets/ajeeeee.svg" alt="">
+        <p><a class="but btn btn-secondary" [routerLink]="['/Juegos/ajedrez']" role="button">JUGAR&raquo;</a></p>
+      </div>
+      <div class="col-md-3">
+        <h2>Memotes</h2>
+        <p>El Memotest es un juego maravilloso que no sólo permite al niño desarrollar su memoria, orientarse en el espacio, el reconocimiento visual, entre otros, sino que además facilita la incorporación de conocimientos y saberes de la cultura general de manera lúdica..............</p>
+        <img class="chico"  src="../../../assets/memotest_2.svg" alt="PiedraPapelTijera">
+        <p><a class="but btn btn-secondary" [routerLink]="['/Juegos/memotest']" role="button">JUGAR&raquo;</a></p>
+      </div>
+    </div>  
+    <div class="tepe" *ngIf = "boton">
+      <app-chat-completo></app-chat-completo>
+      
+    </div>   
+    <button (click) = "funcc()" class="mover btn btn-primary">MOSTRAR CHAT</button>
+
+

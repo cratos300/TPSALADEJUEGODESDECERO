@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Mensaje } from 'src/app/clases/mensaje';
 import { AuthService } from 'src/app/services/auth.service';
+import { MensajesRealtimeService } from 'src/app/services/mensajes-realtime.service';
 import { MensajesService } from 'src/app/services/mensajes.service';
 
 @Component({
@@ -15,8 +16,12 @@ export class HomeComponent implements OnInit {
   resultado:any;
   bol : boolean = true;
   data:any;
-  constructor(private router:Router,private auth:AuthService) { 
+  boton:boolean = false;
+  constructor(private router:Router,private auth:AuthService, private cambiarmensajereal:MensajesRealtimeService) { 
+    this.cambiarmensajereal.dbPath = "/MensajesGeneral"
     this.data = localStorage.getItem("usuario");
+    
+
 
     if(this.data != null)
     {
@@ -36,6 +41,10 @@ export class HomeComponent implements OnInit {
       this.router.navigate(['']);
     }
     return this.bol;
+  }
+  funcc()
+  {
+    this.boton = (!(this.boton));
   }
 
 }

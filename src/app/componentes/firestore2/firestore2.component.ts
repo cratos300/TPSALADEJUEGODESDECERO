@@ -2,25 +2,24 @@ import { Component, OnInit } from '@angular/core';
 import { MensajesFirestoreService } from '../../services/mensajes-firestore.service';
 import { MensajeChat } from "../../clases/mensaje-chat";
 import { MensajesRealtimeService } from '../../services/mensajes-realtime.service';
-import { FormsModule } from "@angular/forms";
 
 @Component({
-  selector: 'app-chatfirestore',
-  templateUrl: './chatfirestore.component.html',
-  styleUrls: ['./chatfirestore.component.css']
+  selector: 'app-firestore2',
+  templateUrl: './firestore2.component.html',
+  styleUrls: ['./firestore2.component.css']
 })
-export class ChatfirestoreComponent implements OnInit {
-  
+export class Firestore2Component implements OnInit {
+
   nuevoMensaje: MensajeChat;
   ver:any; 
   
-  constructor(private servicioFirestore:MensajesFirestoreService,private servicioRealTime:MensajesRealtimeService) {
+  constructor(private servicioFirestore:MensajesFirestoreService,private servicioRealTime:MensajesRealtimeService)
+  {
     this.nuevoMensaje = new MensajeChat();
-   }
+  }
 
   ngOnInit(): void {
   }
-
   EnviarMensaje() {
     this.nuevoMensaje.fecha = new Date().toLocaleString();
     this.ver = localStorage.getItem("usuario");
