@@ -17,6 +17,7 @@ import { TatetiComponent } from './page/tateti/tateti.component';
 
 
 
+
 @NgModule({
   declarations: [
     PiedraPapeloTijeraComponent,

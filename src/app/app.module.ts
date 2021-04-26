@@ -29,6 +29,8 @@ import { ChatCompletoComponent } from './componentes/chat-completo/chat-completo
 import { Listado2Component } from './componentes/listado2/listado2.component';
 import { Chatcompleto2Component } from './componentes/chatcompleto2/chatcompleto2.component';
 
+import  {  ToastrModule  }  from  'ngx-toastr' ;
+
 
 
 
@@ -57,6 +59,12 @@ import { Chatcompleto2Component } from './componentes/chatcompleto2/chatcompleto
     AppRoutingModule,
     AngularFireModule.initializeApp(firebase),
     AngularFireDatabaseModule,
+    BrowserModule,
+    ToastrModule.forRoot({
+      timeOut:1000,
+      progressBar:true
+    })
+    
     
   ],
   providers: [AuthService,MensajesService],
