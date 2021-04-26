@@ -36,8 +36,7 @@ export class AjedrezComponent implements OnInit {
     if(this.numeroIngresado > this.numero)
     {
       this.contador++;
-      alert("hola");
-       this.toastr.success('Some messages','tittle');
+      this.toastr.error('¡Vuelve a intentarlo ese no es el numero.(Si necesitas lee la info del juego abajo.):','VAMOS, TU PUEDES!');
       console.log(this.contador)
     }
     else if(this.numeroIngresado < this.numero)
