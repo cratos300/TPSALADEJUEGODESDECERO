@@ -23,4 +23,20 @@
     margin-left: 1050px;
     width: 150px;
   }
+  .marque
+    {
+        padding-top: 3px;
+        font-size: large;
+        background-color: burlywood;
+       
+        
+    }
+    .pepe
+    {
+        padding: 5px;
+    }
+    .back
+    {
+        background-color: black;
+    }
   

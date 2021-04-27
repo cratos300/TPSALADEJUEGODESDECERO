@@ -18,7 +18,6 @@ import { firebase } from 'src/environments/environment';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {MensajesService} from './services/mensajes.service';
 import { InicioComponent } from './componentes/inicio/inicio.component';
-
 import { ReactiveFormsModule } from '@angular/forms';
 import { DeslogearComponent } from './componentes/deslogear/deslogear.component';
 import { ChatfirestoreComponent } from './componentes/chatfirestore/chatfirestore.component';
@@ -28,7 +27,6 @@ import { PiedraPapeloTijeraComponent } from './Juegos/page/piedra-papelo-tijera/
 import { ChatCompletoComponent } from './componentes/chat-completo/chat-completo.component';
 import { Listado2Component } from './componentes/listado2/listado2.component';
 import { Chatcompleto2Component } from './componentes/chatcompleto2/chatcompleto2.component';
-
 import  {  ToastrModule  }  from  'ngx-toastr' ;
 
 

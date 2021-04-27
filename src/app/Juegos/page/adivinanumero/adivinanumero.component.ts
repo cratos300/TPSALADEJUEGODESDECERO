@@ -4,11 +4,11 @@ import { MensajesRealtimeService } from 'src/app/services/mensajes-realtime.serv
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-ajedrez',
-  templateUrl: './ajedrez.component.html',
-  styleUrls: ['./ajedrez.component.css']
+  selector: 'app-adivinanumero',
+  templateUrl: './adivinanumero.component.html',
+  styleUrls: ['./adivinanumero.component.css']
 })
-export class AjedrezComponent implements OnInit {
+export class AdivinanumeroComponent implements OnInit {
 
   bop:boolean = false;
   ganaste:boolean = false;
@@ -73,5 +73,4 @@ export class AjedrezComponent implements OnInit {
       this.mostrar3 = true;
     }
   }
-
 }

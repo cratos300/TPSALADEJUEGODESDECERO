@@ -14,6 +14,6 @@ export class TatetiComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
-
+  
+}
 }

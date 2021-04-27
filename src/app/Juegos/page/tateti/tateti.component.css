@@ -6,4 +6,10 @@ h1, h2, h3 {
         background-color: skyblue;
     }
 
-  
+    h1 {
+        text-align: center;
+        font-family: 'Indie Flower', cursive;
+        font-size: 55px;
+        color:rgb(0, 0, 0);
+    }
+    
