@@ -1,8 +1,42 @@
+<div class="pintar">
 <nav class="navbar navbar-default">
-    <div class="container">
-      <div class="navbar-header">
-        <a ><img src="../../../assets/imagenes/menu.svg" [routerLink]="['/home']" width="50px" class="alogo" alt=""></a>
-      </div>
+  <div class="container">
+    <div class="navbar-header">
+      <a ><img src="../../../assets/imagenes/menu.svg" [routerLink]="['/home']" width="50px" class="alogo" alt=""></a>
     </div>
-  </nav>
-<h1> TaTeTi</h1>
+  </div>
+</nav>
+<marquee class="marque" behavior="" direction="alternate">Recomendación antes de jugar lee la información del juego que está por debajo.</marquee>    
+<header><h1>Ta Te Ti</h1></header>
+
+<section id="jugadores">
+<div id="comp"></div><div id="hum"></div>
+</section>
+
+<section id="turno"></section>
+
+<section id="tablero">
+
+    <!-- <a class="celda" id="ceroCero" onclick="jugadaHumano(this, 0, 0)"></a><div class="celda" id="ceroUno" onclick="jugadaHumano(this, 0, 1)"></div><div class="celda" id="ceroDos" onclick="jugadaHumano(this, 0, 2)"></div><div class="celda" id="unoCero" onclick="jugadaHumano(this, 1, 0)"></div><div class="celda" id="unoUno" onclick="jugadaHumano(this, 1, 1)"></div><div class="celda" id="unoDos" onclick="jugadaHumano(this, 1, 2)"></div><div class="celda" id="dosCero" onclick="jugadaHumano(this, 2, 0)"></div><div class="celda" id="dosUno" onclick="jugadaHumano(this, 2, 1)"></div><div class="celda" id="dosDos" onclick="jugadaHumano(this, 2, 2)"></div> -->
+    <div>
+        <input type="button" id="boton1" name="boton1" value="" (click)="jugar(0)" class="celda">
+        <input type="button" id="boton2" name="boton2" value=" " (click)="jugar(1)" class="celda">
+        <input type="button" id="boton3" name="boton3" value=" " (click)="jugar(2)" class="celda">
+      </div>
+      <div>
+        <input type="button" id="boton4" name="boton4" value=" " (click)="jugar(3)" class="celda">
+        <input type="button" id="boton5" name="boton5" value=" " (click)="jugar(4)" class="celda">
+        <input type="button" id="boton6" name="boton6" value=" " (click)="jugar(5)" class="celda">
+      </div>
+      <div>
+        <input type="button" id="boton7" name="boton7" value=" " (click)="jugar(6)" class="celda">
+        <input type="button" id="boton8" name="boton8" value=" " (click)="jugar(7)" class="celda">
+        <input type="button" id="boton9" name="boton9" value=" " (click)="jugar(8)" class="celda">
+      </div>
+</section>
+<div class="paranoverfoter">
+  <H1>INFORMACIÓN DEL JUEGO</H1>
+  <p>REGLAS DEL JUEGO: El primer jugador coloca la ficha en cualquiera de los casilleros del tablero. El segundo hará lo mismo con su primera ficha. Se continúa las otras jugadas respetando los turnos, si el jugador consigue alinear tres marcas del mismo tipo, ese jugador hace ¡TA – TE – TI! Y GANARA!!!!!!!!!!!
+</p>
+</div>
+
