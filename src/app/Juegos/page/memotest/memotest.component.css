@@ -5,5 +5,14 @@ h1, h2, h3 {
     {
         background-color: skyblue;
     }
-
-  
+    .marque
+  {
+      padding-top: 5px;
+      font-size: large;
+      background-color: burlywood; 
+  }
+  .paranoverfoter
+  {
+    height: 22vh;
+    background-color:darkgrey
+  }

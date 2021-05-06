@@ -1,11 +1,4 @@
-<nav class="navbar navbar-default">
-    <div class="moviendooo">
-      <div class="navbar-header">
-        <a ><img src="../../../assets/imagenes/menu.svg" [routerLink]="['/home']" width="50px" class="alogo" alt=""></a>
-      </div>
-    </div>
-  </nav>
-
+<marquee class="marque" behavior="" direction="alternate">Recomendación antes de jugar lee la información del juego que está por debajo.</marquee>    
      <div class="r">
         <h1>Piedra Papel o Tijera</h1>
 
@@ -33,5 +26,23 @@
             </button>
         </div>
     </div>
+
+    <div class="container  d-flex justify-content-center">
+        <div class="row">
+          <div class="col-sm-auto">
+            <button type="button" class="btn btn-primary btn-lg e22"  (click)="guardar()">Guardar puntajes</button>
+          </div>
+          <div class="col-sm-auto">
+            <button type="button" class="btn btn-secondary btn-lg e22" (click)="mostrar()">Listar puntajes</button>  
+          </div>
+        </div>
+      </div>  
+    <div class="paranoverfoter">
+        <H1>INFORMACIÓN DEL JUEGO</H1>
+        <p>A "Piedra, papel o tijeras" se juega de dos en dos. Los jugadores se deben poner uno frente al otro con una mano a la espalda y decir en alto: piedra, papel o tijera, justo al acabar la frase enseñarán las manos y verán quien gana. Si los dos jugadores sacan la misma figura hay empate, tablas, no gana nadie
+      </p>
+      </div>
+
+      
 
 

@@ -68,5 +68,20 @@ h1, h2, h3 {
         margin-top: 10px;
         margin-bottom: 10px;
     }
+    .marque
+  {
+      padding-top: 10px;
+      font-size: large;
+      background-color: burlywood; 
+  }
+  .paranoverfoter
+  {
+    height: 22vh;
+    background-color:darkgrey
+  }
+  .e22
+  {
+      background-color: blue;
+  }
 
   

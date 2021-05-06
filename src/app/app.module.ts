@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import {Routes,RouterModule} from '@angular/router';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './ingreso/page/login/login.component';
@@ -27,7 +26,9 @@ import { PiedraPapeloTijeraComponent } from './Juegos/page/piedra-papelo-tijera/
 import { ChatCompletoComponent } from './componentes/chat-completo/chat-completo.component';
 import { Listado2Component } from './componentes/listado2/listado2.component';
 import { Chatcompleto2Component } from './componentes/chatcompleto2/chatcompleto2.component';
-import  {  ToastrModule  }  from  'ngx-toastr' ;
+import  {  ToastrModule  }  from  'ngx-toastr';
+
+
 
 
 
@@ -49,15 +50,16 @@ import  {  ToastrModule  }  from  'ngx-toastr' ;
     ListadoRealtimeComponent,
     ChatCompletoComponent
     
+    
   ],
   imports: [
     FormsModule,
-    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(firebase),
     AngularFireDatabaseModule,
     BrowserModule,
+    
     ToastrModule.forRoot({
       timeOut:1000,
       progressBar:true

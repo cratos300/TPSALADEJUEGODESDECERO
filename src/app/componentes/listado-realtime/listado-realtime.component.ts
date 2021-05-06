@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MensajeChat } from "../../clases/mensaje-chat";
 import { MensajesRealtimeService } from '../../services/mensajes-realtime.service';
 import { map } from 'rxjs/operators';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-listado-realtime',
@@ -10,19 +11,22 @@ import { map } from 'rxjs/operators';
 })
 export class ListadoRealtimeComponent implements OnInit {
 
+  ver:any;
   listadoMensajes?: any[];
   mensajeActual?: MensajeChat;
   currentIndex = -1;
   title = '';
   dato:any;
 
-  constructor(private servicioRealTime:MensajesRealtimeService) { 
+  constructor(private servicioRealTime:MensajesRealtimeService,private auth:AuthService) { 
+    this.ver = auth.data;
     this.dato = localStorage.getItem("usuario");
     this.dato = JSON.parse(this.dato);
     this.cargarMensajes();
   }
 
   ngOnInit(): void {
+    
     this.cargarMensajes();
   }
 

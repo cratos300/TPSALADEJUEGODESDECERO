@@ -27,6 +27,8 @@ export class ChatfirestoreComponent implements OnInit {
     this.ver = JSON.parse(this.ver);
     this.nuevoMensaje.email =  this.ver.correo;
     console.log(this.nuevoMensaje);
+    console.log(this.nuevoMensaje);
+    console.log(this.nuevoMensaje);
     this.servicioFirestore.create(this.nuevoMensaje).then(()=>{
       console.log("se envio el mensaje Fire");
       this.nuevoMensaje.mensaje = "";

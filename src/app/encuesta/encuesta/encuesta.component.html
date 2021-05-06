@@ -1,0 +1,96 @@
+<div class="container">
+    <div class="movedor">
+        <button class="btn btn-primary" (click) ="salir()">SALIR</button>
+    </div>
+    <form [formGroup] = "formGroup" (ngSubmit) = "aceptar()">
+      <div class="row">
+        <div class="col-md-4 mb-5 epa">
+            <h2>ENCUESTA</h2>
+          </div>
+      </div>
+      <div class="row formulario">
+        <div class="col-md-6 mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" placeholder="Ingrese nombre" formControlName= "nombre">
+          <small class="invalid" *ngIf = "formGroup.get('nombre')?.errors?.required && formGroup.get('nombre')?.touched">El nombre es requerido</small>
+          <small class="invalid" *ngIf = "formGroup.get('nombre')?.errors?.contieneEspacios && formGroup.get('nombre')?.touched">Error tiene espacios</small>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="apellido" class="form-label">Apellido</label>
+          <input type="text" class="form-control" id="apellido" placeholder="Ingrese apellido" formControlName= "apellido" >
+          <small class="invalid" *ngIf = "formGroup.get('apellido')?.errors?.required && formGroup.get('apellido')?.touched">El apellido es requerido</small>
+          <small class="invalid" *ngIf = "formGroup.get('apellido')?.errors?.caracter && formGroup.get('apellido')?.touched">Error. Tiene mas de 10 caracateres</small>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="dni" class="form-label">Edad</label>
+          <input type="number" class="form-control" id="edad" placeholder="Ingrese edad" formControlName= "edad">
+          <small class="invalid" *ngIf = "formGroup.get('edad')?.errors?.required && formGroup.get('edad')?.touched">La edad es requerida</small>
+          <small class="invalid" *ngIf = "formGroup.get('edad')?.errors?.min || formGroup.get('edad')?.errors?.max && formGroup.get('edad')?.touched">La edad debe  ser entre.. 18 y 90 años</small>
+          
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="sexo" class="form-label" >Sexo</label>
+          <select class="form-select" id="sexo" formControlName= "sexo">
+            <option value="">Seleccione uno</option>
+            <option value="F">Femenino</option>
+            <option value="M">Masculino</option>
+          </select>
+          <small class="invalid" *ngIf = "formGroup.get('sexo')?.errors?.required && formGroup.get('sexo')?.touched" >El sexo es requerido</small>
+        </div>
+        <div class="col-md-12 mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Ingrese email" formControlName= "email">
+          <small class="invalid" *ngIf = "formGroup.get('email')?.errors?.required && formGroup.get('email')?.touched">El email es requerido</small>
+          <small class="invalid" *ngIf = "formGroup.get('email')?.errors?.pattern && formGroup.get('email')?.touched">Formato inválido.</small>
+        </div>
+        <div class="col-md-12 mb-3">
+          <label for="Teléfono" class="form-label">Teléfono</label>
+          <input type="text" class="form-control" id="telefono" placeholder="Ingrese telefono" formControlName= "telefono">
+          <small class="invalid" *ngIf = "formGroup.get('telefono')?.errors?.required && formGroup.get('telefono')?.touched">El telefono es requerido</small>
+          <small class="invalid" *ngIf = "formGroup.get('telefono')?.errors?.pattern && formGroup.get('telefono')?.touched">Error, no intentes romper, es solo numeros..</small>
+          <small class="invalid" *ngIf = "formGroup.get('telefono')?.errors?.caracter && formGroup.get('telefono')?.touched">Error. Tiene mas de 10 caracateres</small>
+        </div>
+        <div class="col-md-12 mb-3">
+          <label for="Teléfono" class="form-label">Del 0 al 10 ¿Que tal le parecio la pagina?</label>
+          <input type="text" class="form-control" id="pregunta1" placeholder="Contesta!" formControlName= "pregunta1">
+          <small class="invalid" *ngIf = "formGroup.get('pregunta1')?.errors?.required && formGroup.get('pregunta1')?.touched">El telefono es requerido</small>
+          <small class="invalid" *ngIf = "formGroup.get('pregunta1')?.errors?.pattern && formGroup.get('pregunta1')?.touched">Error, no intentes romper, es solo numeros..</small>
+          <small class="invalid" *ngIf = "formGroup.get('pregunta1')?.errors?.tece && formGroup.get('pregunta1')?.touched">Error. es del 1 al 10 , MAYOR A 0 Y MENOR A 10.</small>
+        </div>
+        <div class="col-md-12 mb-3">
+          <label for="sexo" class="form-label" >¿Que otros juegos te gustaría ver en esta web?</label>
+          <select class="form-select" id="juegos" formControlName= "juegos">
+            <option value="">Seleccione uno</option>
+            <option value="Ajedrez">Ajedrez</option>
+            <option value="Domino">Dominó</option>
+            <option value="Otros">Otros</option>
+          </select>
+          <small class="invalid" *ngIf = "formGroup.get('juegos')?.errors?.required && formGroup.get('juegos')?.touched" >Seleccione una opcion. Es requerido</small>
+        </div>
+        <div class="col-md-12 mb-5">
+          <fieldset>
+            <label for="sexo" class="form-radio" >¿Te divertiste?</label>
+            <ul>
+              <li>
+                <label class="l" for="soup">si</label>
+                <input  formControlName= "respuesta" type="radio" id="soup" name="respuesta" value="si">
+              </li>
+              <li>
+                <label class="l" for="curry">no</label>
+                <input  formControlName= "respuesta" type="radio" id="curry" name="respuesta" value="no">
+              </li>
+            </ul>
+          </fieldset>
+          <small class="invalid" *ngIf = "formGroup.get('respuesta')?.errors?.required && formGroup.get('respuesta')?.touched" >El checkbox es requerido</small>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 d-grid gap-2">
+          <button type="submit" class="btn btn-primary btn-block" [disabled] = "formGroup.invalid">
+            Aceptar
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+

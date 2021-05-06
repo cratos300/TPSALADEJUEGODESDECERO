@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MensajesRealtimeService } from 'src/app/services/mensajes-realtime.service';
 
 @Component({
   selector: 'app-memotest',
@@ -8,12 +7,13 @@ import { MensajesRealtimeService } from 'src/app/services/mensajes-realtime.serv
 })
 export class MemotestComponent implements OnInit {
 
-  constructor(private cambiarmensajereal:MensajesRealtimeService)
-  {
-    this.cambiarmensajereal.dbPath = "/MensajesMemotest"
-  }
-
-  ngOnInit(): void {
-  }
-
+   //SERVICE VARIABLES
+   
+ 
+   constructor() {
+   }
+ 
+   ngOnInit(): void {
+   }
+ 
 }

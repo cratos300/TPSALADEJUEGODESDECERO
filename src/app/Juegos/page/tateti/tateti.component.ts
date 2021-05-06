@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MensajesRealtimeService } from 'src/app/services/mensajes-realtime.service';
 import { ToastrService } from 'ngx-toastr';
 import Swal from 'sweetalert2';
+import {Puntajes} from '../../../clases/puntajes';
+import {TatetiService} from '../../../services/tateti.service';
 
 
 @Component({
@@ -10,12 +12,29 @@ import Swal from 'sweetalert2';
   styleUrls: ['./tateti.component.css']
 })
 export class TatetiComponent implements OnInit {
-
-   comenzar:boolean = false;
+  comenzar:boolean = false;
   casilleros = new Array(9);
   ficha :string = "X";
+  contadorVitorias:number = 0;
+  contadorDerrotas:number = 0;
+  contadorEmpates: number = 0;
+  puntajes!:Puntajes;
+  puntajesVista!:Puntajes;
+  id: string = "";
+  ver:any
+  tieneDatosCargados: boolean = false;
+  email:any;
 
-  constructor(private toastr:ToastrService) {
+
+  constructor(private toastr:ToastrService,private tatetiServicio : TatetiService) {
+    this.tatetiServicio.dbPath = "/tateti";
+    this.puntajes = new Puntajes();
+    this.ver = localStorage.getItem("usuario");
+    this.ver = JSON.parse(this.ver);
+    this.puntajes.email  = this.ver.correo;
+    this.email = this.puntajes.email?.toString();
+    this.inicializarPuntajes();
+    this.getAll();
    }
 
   ngOnInit(): void {
@@ -35,13 +54,16 @@ export class TatetiComponent implements OnInit {
       }
       
       if(this.gano(this.ficha)){
+        this.contadorVitorias++;
+        this.puntajes.victorias = this.contadorVitorias.toString();
         console.log("GANASTE");
         this.toastr.success('GANASTE QUE BIENN!!!!.:','SOS UN GROSO..!',{
           timeOut:2000
         });
         this.reiniciar();
       }else if(this.empate()){
-
+        this.contadorEmpates++;
+        this.puntajes.empate = this.contadorEmpates.toString();
         this.toastr.warning('Empantaste!!!!.:','UPSS, QUE PENA..!',{
           timeOut:2000
         });
@@ -99,6 +121,8 @@ export class TatetiComponent implements OnInit {
 
       if(this.gano(fichaMaquina)){
         console.log("GANA LA MAQUINA");
+        this.contadorDerrotas++;
+        this.puntajes.derrotas = this.contadorDerrotas.toString();
         this.toastr.warning('UUUPSSS!!!!.:','UPSS, QUE PENA PERO PERDISTE..!',{
           timeOut: 2000
         });
@@ -141,5 +165,73 @@ export class TatetiComponent implements OnInit {
 
   eligeFicha(ficha:string){
     this.ficha = ficha;
+  }
+  inicializarPuntajes(){
+    this.puntajes.derrotas = "0";
+    this.puntajes.victorias = "0";
+    this.puntajes.empate = "0";
+  }
+  getAll(){
+    var lista = this.tatetiServicio.getAll().valueChanges({ idField: 'propertyId' })
+     lista.subscribe(lista=>{
+       for (var puntaje of lista) {
+         this.puntajes.email = this.email;
+         if(puntaje.email == this.puntajes.email) {
+           this.puntajesVista = puntaje;
+           this.tieneDatosCargados = true;
+           this.id = puntaje.propertyId;
+           break;
+         }
+       }
+     });       
+  }
+  guardar(){
+    console.log(this.tieneDatosCargados);
+    
+    if(!this.tieneDatosCargados){
+    
+      this.tatetiServicio.create(this.puntajes);
+      console.log("guardar");
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Tus partidas están guardadas',
+        showConfirmButton: false,
+        timer: 1500
+      });
+    }else{
+      
+      this.puntajes.victorias = (+(+this.puntajes.victorias) +(+this.puntajesVista.victorias)).toString();
+      this.puntajes.derrotas = (+(+this.puntajes.derrotas) +(+this.puntajesVista.derrotas)).toString();
+      this.puntajes.empate = (+(+this.puntajes.empate) +(+this.puntajesVista.empate)).toString();
+      this.tatetiServicio.update(this.id,this.puntajes);
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Tus partidas están guardadas',
+        showConfirmButton: false,
+        timer: 1500
+      });
+    }
+    
+    this.inicializarPuntajes();
+  }
+  mostrar(){
+   if(!this.tieneDatosCargados)
+   {
+     this.puntajesVista = new Puntajes();
+     this.puntajesVista.derrotas = "";
+     this.puntajesVista.email = "";
+     this.puntajesVista.empate = "";
+     this.puntajesVista.victorias = "";
+   }
+   
+      Swal.fire({
+        title: '<strong>Partidas</strong>',
+        icon: 'info',
+        html:
+        '<table class="table"><thead><tr><th scope="col">Jugador</th><th scope="col">Victorias</th><th scope="col">Derrotas</th><th scope="col">Empates</th></tr></thead><tbody><tr><th scope="row">'+this.puntajesVista.email+'</th><td>'+this.puntajesVista.victorias+'</td><td>'+this.puntajesVista.derrotas+'</td><td>'+this.puntajesVista.empate+'</td></tr>',
+      });
+    
   }
 }

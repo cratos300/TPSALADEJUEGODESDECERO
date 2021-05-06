@@ -13,6 +13,7 @@ const routes: Routes = [
 {path:'home',component: HomeComponent},
 {path: 'ingreso', loadChildren: () => import('./ingreso/ingreso.module').then(m => m.IngresoModule) },
 {path: 'Juegos', loadChildren: () => import('./Juegos/juegos.module').then(m => m.JuegosModule) },
+{ path: 'encuesta', loadChildren: () => import('./encuesta/encuesta.module').then(m => m.EncuestaModule) },
 {path:'**',component: ErroresComponent}
 ];
 
