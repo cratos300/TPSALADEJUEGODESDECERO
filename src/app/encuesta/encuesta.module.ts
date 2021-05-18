@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { EncuestaRoutingModule } from './encuesta-routing.module';
 import {EncuestaComponent} from '../encuesta/encuesta/encuesta.component'
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     EncuestaRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxSpinnerModule
     
   ]
 })

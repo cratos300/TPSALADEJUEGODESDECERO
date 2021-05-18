@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { FormularioService } from 'src/app/services/formulario.service';
 import {Formm} from '../../clases/formm';
 import swal from 'sweetalert2';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-encuesta',
@@ -12,14 +13,19 @@ import swal from 'sweetalert2';
 })
 export class EncuestaComponent implements OnInit {
   unaencuesta!:Formm;
+  
   apellido:string = "";
   guardar:string = "";
   public formGroup!: FormGroup;
-  constructor(private sv:FormularioService, private fb:FormBuilder,private router:Router) {
+  constructor(private sv:FormularioService, private fb:FormBuilder,private router:Router,private spinner: NgxSpinnerService) {
     this.unaencuesta = new Formm();
+    //this.spinner.hide();
+    //this.spinner.show();
    }
 
   ngOnInit(): void {
+    this.spinner.hide();
+    this.spinner.hide();
     this.formGroup = this.fb.group({
       'nombre': ['',[Validators.required,this.spacesValidator]],
       'apellido': ['',[Validators.required,this.validarcantidadCaracter]],
@@ -45,20 +51,19 @@ export class EncuestaComponent implements OnInit {
     this.unaencuesta.sexo = this.formGroup.getRawValue().sexo;
     this.unaencuesta.telefono = this.formGroup.getRawValue().telefono;
     this.unaencuesta.edad = this.formGroup.getRawValue().edad;
-    this.sv.create(this.unaencuesta).then(()=>
-    {
-      console.log("mensaje enviado");
-      swal.fire({
+        console.log("mensaje enviado");
+        swal.fire({
         position: 'center',
         icon: 'success',
         title: 'Formulario Enviado!!',
         showConfirmButton: false,
         timer: 1500,
       })
-      setTimeout(() => {
+    this.sv.create(this.unaencuesta).then(()=>
+    {
         this.router.navigate(['home']);
-      }, 1500);
     });
+        
 //    console.log(this.formGroup.get('email')?.value)
 //  console.log(this.formGroup.controls['email'].value);
   }

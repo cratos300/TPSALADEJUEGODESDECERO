@@ -4,9 +4,10 @@
       *ngFor="let mensaje of listadoMensajes; let i = index"
       [class.active]="i == currentIndex"
     >
-    <span>{{mensaje.email}} : {{mensaje.mensaje}}</span>
-    <br>
-    <span> {{ mensaje.fecha }}  </span>
+    <span class="deeee" *ngIf = "mensaje.email == 'yo'">{{mensaje.email}} : {{mensaje.mensaje}}</span>
+    <span class="deeee" *ngIf = "mensaje.email == 'yo'" > {{ mensaje.fecha }}  </span>
+    <span class="dete" *ngIf = "mensaje.email != 'yo'">{{mensaje.email}} : {{mensaje.mensaje}}</span>
+    <span class="dete" *ngIf = "mensaje.email != 'yo'" > {{ mensaje.fecha }}  </span>
      
     </li>
   </ul>

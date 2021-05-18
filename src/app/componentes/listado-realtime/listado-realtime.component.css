@@ -16,3 +16,16 @@
       background-color: black;
       height: 50px;
   }
+  .deeee
+  {
+    display: block;
+    text-align: end;
+    font-size: 13px;
+    font-size: Arial, Helvetica, Sans-serif;
+  }
+  .dete
+  {
+    display: block;
+    text-align: start;
+    font-size: 13px;
+  }

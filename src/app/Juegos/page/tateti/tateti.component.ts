@@ -204,7 +204,12 @@ export class TatetiComponent implements OnInit {
       this.puntajes.victorias = (+(+this.puntajes.victorias) +(+this.puntajesVista.victorias)).toString();
       this.puntajes.derrotas = (+(+this.puntajes.derrotas) +(+this.puntajesVista.derrotas)).toString();
       this.puntajes.empate = (+(+this.puntajes.empate) +(+this.puntajesVista.empate)).toString();
-      this.tatetiServicio.update(this.id,this.puntajes);
+      console.log(this.puntajes);
+      console.log(this.puntajes);
+      console.log(this.puntajes);
+      this.tatetiServicio.update(this.id,this.puntajes).then((e)=>{
+        console.log("se modifico" + e);
+      })
       Swal.fire({
         position: 'center',
         icon: 'success',

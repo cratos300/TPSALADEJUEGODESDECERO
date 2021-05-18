@@ -128,9 +128,15 @@ export class AdivinanumeroComponent implements OnInit {
         timer: 1500
       });
     }else{
+      console.log(this.punt1);
       this.punt1.victorias = (+(+this.punt1.victorias) +(+this.punt2.victorias)).toString();
       this.punt1.intentos =  (+(+this.punt1.intentos) +(+this.punt2.intentos)).toString();
-      this.adivinasolo.update(this.id,this.punt1);
+      this.punt1.intentos = this.punt1.drintin;
+      console.log(this.punt1);
+      this.adivinasolo.update(this.id,this.punt1).then((e)=>
+      {
+       alert("se modifico" + e); 
+      })
       Swal.fire({
         position: 'center',
         icon: 'success',
@@ -157,7 +163,7 @@ export class AdivinanumeroComponent implements OnInit {
         title: '<strong>Partidas</strong>',
         icon: 'info',
         html:
-        '<table class="table"><thead><tr><th scope="col">Jugador</th><th scope="col">Victorias</th></tr></thead><tbody><tr><th scope="row">'+this.punt2.email+'</th><td>'+this.punt2.victorias+'</td></tr>',
+        '<table class="table"><thead><tr><th scope="col">Jugador</th><th scope="col">Victorias</th><th scope="col">Intentos</th><th scope="col">drintin</th></tr></thead><tbody><tr><th scope="row">'+this.punt2.email+'</th><td>'+this.punt2.victorias+'</td><td>'+this.punt2.intentos+'<td>'+this.punt2.drintin+'</tr>',
 
       });
        

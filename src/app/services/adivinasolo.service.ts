@@ -35,6 +35,7 @@ export class AdivinasoloService {
     return this.tatetiRef.doc(id).update({
       victorias: data.victorias,
       email: data.email,
+      intentos: data.intentos
     });
   }
 
