@@ -13,8 +13,8 @@ import { MemotestService } from "../../../services/memotest.service";
 export class MemotestComponent implements OnInit {
   
    mostrar:string = ""; 
-   gameState : string = "";
-   startGame = false;
+   gameState : string = "init";
+   startGame = true;
    countDown = 0;
    totalTime = 0;
    shownTime = "";
@@ -24,7 +24,7 @@ export class MemotestComponent implements OnInit {
    cardsTotal = 12;	// Total cards to match (divided by 2)
    cardsArray:any= [];	// Store all card pairs
    listaPises: any= new Array();
-   userLife = 4;		// Total amount of tries user gets
+   userLife = 15;		// Total amount of tries user gets
   //  imageDir = '../assets/img/fruits/';
   //  images = ['apple', 'strawberry', 'apple-green', 'cherry',
   // 				   'grape-green', 'grape-purple', 'peach', 'pear'];
@@ -144,15 +144,15 @@ export class MemotestComponent implements OnInit {
   // Function to restart game
   restartGame(){
     this.mostrar = '';
-    this.gameState = 'load';
-    this.startGame = false;
+    this.gameState = 'init';
+    this.startGame = true;
     this.countDown = 3;
     this.totalTime = 60;
     this.shownTime = "";
     this.countTime = 0;
     this.interCount = 0;
 
-    this.userLife = 4;
+    this.userLife = 15;
     this.resetSelects();
     this.populateCards();
   	this.shuffle(this.cardsArray);
