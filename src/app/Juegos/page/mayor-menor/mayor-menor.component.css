@@ -1,0 +1,47 @@
+.divPrincipal
+{
+    background-color: coral;
+    height: 100vh;
+    text-align: center;
+
+}
+.divSecundario
+{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+}
+img
+{
+   border-color: black;
+   width: 420px;
+   height: 500px;
+   border-style: solid;
+   border-width: 10px;
+}
+.imgderecho
+{
+    margin-left: 4px;
+}
+.imgizquierdo
+{
+    margin-right: 4px;
+}
+h1
+{
+    margin-top: 5px;
+}
+.divh1
+{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+.imgh1derecho
+{
+    margin-right: 250px;
+}
+.imgh1izquierdo
+{
+    margin-left: 250px;
+}
