@@ -50,8 +50,7 @@ import { HttpClientModule } from "@angular/common/http";
     DeslogearComponent,
     ChatfirestoreComponent,
     ListadoRealtimeComponent,
-    ChatCompletoComponent
-    
+    ChatCompletoComponent,
     
   ],
   imports: [

@@ -1,0 +1,58 @@
+.d
+{
+    width: 200px;
+    height: 160px;
+}
+.uno
+{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1
+{
+    margin-top: 10px;
+    font-size: 60px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+}
+.divgeneral
+{
+  text-align: center;
+  display: block;
+}
+.costado
+{
+    border: solid 2px black;
+    margin-left: 2px;
+    margin-top: 2px;
+}
+.primerdiv
+{
+    margin-top: 100px;
+}
+.p
+{
+    background-color: blanchedalmond;
+    height: 100vh;
+}
+.e
+{
+    
+    width: 250px;
+    height: 200px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+}
+.teca
+{
+    color: black;
+    font-size: 20px;
+    
+}
+h2
+{
+    display: inline-block;
+    margin-left: 15px;
+}

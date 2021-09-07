@@ -31,10 +31,6 @@
        
         
     }
-    .pepe
-    {
-        padding: 5px;
-    }
     .back
     {
         background-color: black;
@@ -46,5 +42,9 @@
     .revabajo
     {
         margin-top: 10px;
+    }
+    .solo
+    {
+        background-color: chocolate;
     }
   

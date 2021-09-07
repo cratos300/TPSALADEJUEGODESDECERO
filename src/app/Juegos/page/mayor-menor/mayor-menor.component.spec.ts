@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdivinanumeroComponent } from './adivinanumero.component';
+import { MayorMenorComponent } from './mayor-menor.component';
 
-describe('AdivinanumeroComponent', () => {
-  let component: AdivinanumeroComponent;
-  let fixture: ComponentFixture<AdivinanumeroComponent>;
+describe('MayorMenorComponent', () => {
+  let component: MayorMenorComponent;
+  let fixture: ComponentFixture<MayorMenorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdivinanumeroComponent ]
+      declarations: [ MayorMenorComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdivinanumeroComponent);
+    fixture = TestBed.createComponent(MayorMenorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

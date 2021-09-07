@@ -1,0 +1,65 @@
+
+  <div *ngIf = "boleano == true" class="container bg" >
+
+    <!-- Three columns of text below the carousel -->
+  
+      <!-- Example row of columns -->
+      <div class="row divPrincipal">
+        <div class="col-12 col-sm-6 col-lg-4">
+          <img (click) = "Seleccionar('cantantes')"  class="bd-placeholder-img rounded-circle r" width="200" height="200"  role="img"   src="../../../../assets/cantante.jpg" alt="">
+      <h2>Cantantes</h2>
+      <p>Acá vienen los cantantes!!</p>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <img  (click) = "Seleccionar('actores')"  class="bd-placeholder-img rounded-circle r" width="200" height="200"  role="img"   src="../../../../assets/actores.jpg" alt="">
+  
+          <h2>Atriz/Acto</h2>
+          <p>Acá vienen la gente del "espectaculo".</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-12 col-sm-12 col-lg-4">
+          <img (click) = "Seleccionar('espectaculo')" class="bd-placeholder-img rounded-circle r" width="200" height="200"   role="img"   src="../../../../assets/allpeople.jpg" alt="">
+          <h2>Lo que venga.</h2>
+          <p>"Aca un mix de todo un poco.</p>
+        </div><!-- /.col-lg-4 -->
+      </div>  
+</div>
+
+<div *ngIf = "boleano == false && final == true" >
+    <div class="divJuego">
+      <div class="eu">
+        <h1>¿Quién es?</h1>
+      </div>
+        <img class="imagen" *ngIf = "imagennormal == false" src = {{aux.urlNormal}} alt="">
+        <img class="imagenBuena" *ngIf = "imagennormal == true" src = {{aux.urlNormal}} alt="">
+      <div class="soloundiv">
+        <div *ngIf = "correcto1">
+          <button class="btn btn-warning" (click) = "apreto()">{{aux.personacorrecta}}</button>
+          <button class="btn btn-warning" (click) = "apreto()">{{aux.personaincorrecta}}</button>
+          <button class="btn btn-primary" (click) = "siguiente()">NEXT</button>
+        </div>
+        <div *ngIf ="!correcto1">
+          <button class="btn btn-warning" (click) = "apreto()">{{aux.personaincorrecta}}</button>
+          <button class="btn btn-warning" (click) = "apreto()">{{aux.personacorrecta}}</button>
+          <button class="btn btn-primary" (click) = "siguiente()">NEXT</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sfalso" *ngIf = "final == false">
+    <div class="s">
+      <button class="btn btn-primary" (click) = "restart()" >JUGAR NUEVAMENTE!</button>
+    </div>
+    <div class="centrarbotonguardarylistar">
+        <button type="button" class="btn btn-primary">Guardar puntajes</button>
+        <button type="button" class="btn btn-secondary">Listar puntajes</button> 
+    </div> 
+  </div>
+
+
+  
+
+
+   
+
+
+  

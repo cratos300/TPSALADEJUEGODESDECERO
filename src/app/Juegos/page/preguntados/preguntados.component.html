@@ -1,0 +1,37 @@
+
+
+<div class="p">
+    <div class="uno" *ngIf = "boleano == false && tira == true">
+        <button class="btn btn-primary e" (click) = "func()"> <MARQUEE  WIDTH=180 BEHAVIOR = alternate SCROLLAMOUNT = 8 class="teca">JUGAR AHORA!</MARQUEE></button>
+    </div>
+<div class="uno"  *ngIf = "boleano == false && this.data.length  == 0"  >
+        <div *ngIf = "boleano == false && this.data.length  == 0">
+            <button *ngIf = "boleano == false && this.data.length  == 0" class="btn btn-primary e" (click) = "dos()"> <MARQUEE  WIDTH=180 BEHAVIOR = alternate SCROLLAMOUNT = 8 class="teca">JUGAR DE NUEVO</MARQUEE></button>
+        </div>
+</div>
+<div class="divgeneral" >
+<h1 *ngIf = "pregunta != '' && this.data.length > 0" >{{pregunta}}</h1>
+<div *ngIf = "boleano == true && this.data.length > 0"  class="primerdiv">
+    <button type="button"  class="btn btn-primary btn-lg d costado" (click) = "enter('1')" > {{boton1}}</button>
+    <button type="button"  class="btn btn-primary btn-lg d costado" (click) = "enter('2')" > {{boton2}}</button>
+    <button type="button"  class="btn btn-primary btn-lg d costado" (click) = "enter('3')" > {{boton3}}</button>
+</div>
+<div *ngIf = "boleano == true && this.data.length > 0" >
+    <button type="button"  class="btn btn-primary btn-lg d costado" (click) = "enter('4')" > {{boton4}}</button>
+    <button type="button"  class="btn btn-primary btn-lg d costado" (click) = "enter('5')" > {{boton5}}</button>
+    <button type="button"  class="btn btn-primary btn-lg d costado" (click) = "enter('6')" > {{boton6}}</button>
+</div>
+    <h2 *ngIf = "boleano == false && this.data.length  == 0" >GANADAS:{{victorias}} </h2>
+    <h2 *ngIf = "boleano == false && this.data.length  == 0" >EMPATADAS:{{empatadas}} </h2>
+    <h2 *ngIf = "boleano == false && this.data.length  == 0">PERDIDAS:{{perdidas}} </h2>
+<div>
+    <h3 *ngIf = "boleano == true && this.data.length > 0">Acertadas : {{contador}} </h3>
+</div>
+<div>
+    <h3 *ngIf = "boleano == true && this.data.length > 0">Falladas : {{errores}} </h3>
+</div>
+</div>
+</div>
+
+
+
