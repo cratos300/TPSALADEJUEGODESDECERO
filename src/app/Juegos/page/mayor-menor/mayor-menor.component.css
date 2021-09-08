@@ -45,3 +45,17 @@ h1
 {
     margin-left: 250px;
 }
+.cent
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.principal2
+{
+    display: flex;
+    background-color: coral;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}

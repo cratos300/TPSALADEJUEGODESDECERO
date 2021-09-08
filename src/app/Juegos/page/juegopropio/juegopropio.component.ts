@@ -16,6 +16,7 @@ import { ImagenDifuminada } from 'src/app/clases/imagen-difuminada';
   styleUrls: ['./juegopropio.component.css']
 })
 export class JuegopropioComponent implements OnInit {
+  state:boolean = false;
   es!:number;
   final:boolean = true;
   correcto1:boolean = true;
@@ -84,13 +85,34 @@ export class JuegopropioComponent implements OnInit {
     }
 
   }
-  apreto()
+  apreto(recibido:string)
   {
+    if(recibido == "correcto")
+    {
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Correcto',
+        showConfirmButton: false,
+        timer: 700
+      })
+    }
+    else
+    {
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Incorrecto',
+        showConfirmButton: false,
+        timer: 700
+      })
+    }
     this.imagennormal = true;
-    
+    this.state = true;
   }
   siguiente()
   {
+    this.state = false;
     this.es = Math.floor(Math.random() * (2 - 0) + 0);
     if(this.es == 0)
     {

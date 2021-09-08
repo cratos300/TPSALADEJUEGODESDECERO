@@ -32,14 +32,14 @@
         <img class="imagen" *ngIf = "imagennormal == false" src = {{aux.urlNormal}} alt="">
         <img class="imagenBuena" *ngIf = "imagennormal == true" src = {{aux.urlNormal}} alt="">
       <div class="soloundiv">
-        <div *ngIf = "correcto1">
-          <button class="btn btn-warning" (click) = "apreto()">{{aux.personacorrecta}}</button>
-          <button class="btn btn-warning" (click) = "apreto()">{{aux.personaincorrecta}}</button>
+        <div *ngIf = "correcto1"> 
+          <button class="btn btn-warning" [disabled] = "state" (click) = "apreto('correcto')">{{aux.personacorrecta}}</button>
+          <button class="btn btn-warning" [disabled] = "state" (click) = "apreto('incorrecto')">{{aux.personaincorrecta}}</button>
           <button class="btn btn-primary" (click) = "siguiente()">NEXT</button>
         </div>
         <div *ngIf ="!correcto1">
-          <button class="btn btn-warning" (click) = "apreto()">{{aux.personaincorrecta}}</button>
-          <button class="btn btn-warning" (click) = "apreto()">{{aux.personacorrecta}}</button>
+          <button class="btn btn-warning" [disabled] = "state" (click) = "apreto('incorrecto')">{{aux.personaincorrecta}}</button>
+          <button class="btn btn-warning" [disabled] = "state" (click) = "apreto('correcto')">{{aux.personacorrecta}}</button>
           <button class="btn btn-primary" (click) = "siguiente()">NEXT</button>
         </div>
       </div>
