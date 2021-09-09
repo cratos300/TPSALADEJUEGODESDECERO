@@ -34,8 +34,6 @@ export class AhorcadoComponent implements OnInit {
      {
        this.aux2 = this.aux.replace(this.aux,this.aux3);
        console.log(this.aux2);
-       this.aux2normal = this.aux2.replace(/ /g, "");
-       
      })
    }
 
