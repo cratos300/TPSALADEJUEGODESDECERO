@@ -1,0 +1,50 @@
+<div class="divPrincipal">
+    <div class="divSecundario">
+        <img *ngIf = "contador == 0" src="../../../../assets/imagenAhorcado/inicial.jpg" alt="">
+        <img *ngIf = "contador == 1" src="../../../../assets/imagenAhorcado/primerError.jpg" alt="">
+        <img *ngIf = "contador == 2" src="../../../../assets/imagenAhorcado/segundoError.jpg" alt="">
+        <img *ngIf = "contador == 3" src="../../../../assets/imagenAhorcado/terceroError.jpg" alt="">
+        <img *ngIf = "contador == 4" src="../../../../assets/imagenAhorcado/cuartoError.jpg" alt="">
+        <img *ngIf = "contador == 5" src="../../../../assets/imagenAhorcado/quintoError.jpg" alt="">
+        <img *ngIf = "contador == 6" src="../../../../assets/imagenAhorcado/ErrorFinal.jpg" alt="">
+        <h1>{{aux2}}</h1>
+    </div>
+    <div class="centrar">
+        <table>
+            <tr>
+                <button (click) = "click('A')">A</button>
+                <button (click) = "click('B')">B</button>
+                <button (click) = "click('C')">C</button>
+                <button (click) = "click('D')">D</button>
+                <button (click) = "click('E')">E</button>
+                <button (click) = "click('F')">F</button>
+                <button (click) = "click('G')">G</button>
+                <button (click) = "click('H')">H</button>
+                <button (click) = "click('I')">I</button>
+            </tr>
+            <tr>
+                <button (click) = "click('J')">J</button>
+                <button (click) = "click('K')">K</button>
+                <button (click) = "click('L')">L</button>
+                <button (click) = "click('M')">M</button>
+                <button (click) = "click('N')">N</button>
+                <button (click) = "click('R')">Ñ</button>
+                <button (click) = "click('O')">O</button>
+                <button (click) = "click('P')">P</button>
+                <button (click) = "click('Q')">Q</button>
+            </tr>
+            <tr>
+                <button (click) = "click('R')">R</button>
+                <button (click) = "click('S')">S</button>
+                <button (click) = "click('T')">T</button>
+                <button (click) = "click('U')">U</button>
+                <button (click) = "click('V')">V</button>
+                <button (click) = "click('W')">W</button>
+                <button (click) = "click('X')">X</button>
+                <button (click) = "click('Y')">Y</button>
+                <button (click) = "click('Z')">Z</button>
+            </tr>
+        </table>
+        <button class="btn btn-primary soloBoton">INICIAR</button>
+    </div>
+</div>

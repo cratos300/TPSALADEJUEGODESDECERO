@@ -12,6 +12,7 @@ import { TatetiComponent } from './page/tateti/tateti.component';
 import { JuegopropioComponent } from './page/juegopropio/juegopropio.component';
 import { PreguntadosComponent } from './page/preguntados/preguntados.component';
 import { MayorMenorComponent } from './page/mayor-menor/mayor-menor.component';
+import { AhorcadoComponent } from './page/ahorcado/ahorcado.component';
 
 
 
@@ -28,7 +29,8 @@ import { MayorMenorComponent } from './page/mayor-menor/mayor-menor.component';
      Chatcompleto2Component,
      JuegopropioComponent,
      PreguntadosComponent,
-     MayorMenorComponent
+     MayorMenorComponent,
+     AhorcadoComponent
     ],
   imports: [
     CommonModule,

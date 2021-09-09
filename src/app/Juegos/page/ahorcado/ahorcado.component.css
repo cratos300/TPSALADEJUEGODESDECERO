@@ -1,0 +1,43 @@
+img
+{
+    width: 400px;
+    height: 350px;
+}
+.divSecundario
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+h1
+{
+    font-size: 100px;
+}
+table
+{
+    margin-top: 20px;
+    font-size: 50px;
+}
+tr button:hover
+{
+    background-color: #A79790;
+}
+tr button
+{
+    
+    height: 80px;
+    width: 80px;
+}
+.centrar
+{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+}
+.soloBoton
+{
+    margin-top: 20px;
+    height: 240px;
+    width: 625px;
+    font-size: 60px;
+}
