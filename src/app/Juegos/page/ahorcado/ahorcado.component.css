@@ -3,6 +3,14 @@ img
     width: 400px;
     height: 350px;
 }
+.divPrincipal
+{
+    background-color: chocolate;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .divSecundario
 {
     display: flex;

@@ -1,4 +1,4 @@
-<div class="divPrincipal">
+<div *ngIf = "notermino">
     <div class="divSecundario">
         <img *ngIf = "contador == 0" src="../../../../assets/imagenAhorcado/inicial.jpg" alt="">
         <img *ngIf = "contador == 1" src="../../../../assets/imagenAhorcado/primerError.jpg" alt="">
@@ -12,39 +12,43 @@
     <div class="centrar">
         <table>
             <tr>
-                <button (click) = "click('A')">A</button>
-                <button (click) = "click('B')">B</button>
-                <button (click) = "click('C')">C</button>
-                <button (click) = "click('D')">D</button>
-                <button (click) = "click('E')">E</button>
-                <button (click) = "click('F')">F</button>
-                <button (click) = "click('G')">G</button>
-                <button (click) = "click('H')">H</button>
-                <button (click) = "click('I')">I</button>
+                <button (click) = "click('A')" [disabled] = "statea" >A</button>
+                <button (click) = "click('B')" [disabled] = "stateb">B</button>
+                <button (click) = "click('C')" [disabled] = "statec">C</button>
+                <button (click) = "click('D')" [disabled] = "stated">D</button>
+                <button (click) = "click('E')" [disabled] = "statee">E</button>
+                <button (click) = "click('F')" [disabled] = "statef">F</button>
+                <button (click) = "click('G')" [disabled] = "stateg">G</button>
+                <button (click) = "click('H')" [disabled] = "stateh">H</button>
+                <button (click) = "click('I')" [disabled] = "statei">I</button>
             </tr>
             <tr>
-                <button (click) = "click('J')">J</button>
-                <button (click) = "click('K')">K</button>
-                <button (click) = "click('L')">L</button>
-                <button (click) = "click('M')">M</button>
-                <button (click) = "click('N')">N</button>
-                <button (click) = "click('R')">Ñ</button>
-                <button (click) = "click('O')">O</button>
-                <button (click) = "click('P')">P</button>
-                <button (click) = "click('Q')">Q</button>
+                <button (click) = "click('J')" [disabled]  = "statej">J</button>
+                <button (click) = "click('K')" [disabled] = "statek">K</button>
+                <button (click) = "click('L')" [disabled] = "statel">L</button>
+                <button (click) = "click('M')" [disabled] = "statem">M</button>
+                <button (click) = "click('N')" [disabled] = "staten">N</button>
+                <button (click) = "click('Ñ')" disabled = "stateñ">Ñ</button>
+                <button (click) = "click('O')" [disabled] = "stateo">O</button>
+                <button (click) = "click('P')" [disabled] = "statep">P</button>
+                <button (click) = "click('Q')" [disabled] = "stateq">Q</button>
             </tr>
             <tr>
-                <button (click) = "click('R')">R</button>
-                <button (click) = "click('S')">S</button>
-                <button (click) = "click('T')">T</button>
-                <button (click) = "click('U')">U</button>
-                <button (click) = "click('V')">V</button>
-                <button (click) = "click('W')">W</button>
-                <button (click) = "click('X')">X</button>
-                <button (click) = "click('Y')">Y</button>
-                <button (click) = "click('Z')">Z</button>
+                <button (click) = "click('R')" [disabled] = "stater">R</button>
+                <button (click) = "click('S')" [disabled] = "states">S</button>
+                <button (click) = "click('T')" [disabled] = "statet">T</button>
+                <button (click) = "click('U')" [disabled] = "stateu">U</button>
+                <button (click) = "click('V')" [disabled] = "statev">V</button>
+                <button (click) = "click('W')" [disabled] = "statew">W</button>
+                <button (click) = "click('X')" [disabled] = "statex">X</button>
+                <button (click) = "click('Y')" [disabled] = "statey">Y</button>
+                <button (click) = "click('Z')" [disabled] = "statez">Z</button>
             </tr>
         </table>
         <button class="btn btn-primary soloBoton">INICIAR</button>
     </div>
+</div>
+<div *ngIf = "!notermino" class="divPrincipal">
+<button class="btn btn-warning">LISTAR</button>
+<button class="btn btn-primary">GUARDAR</button>
 </div>

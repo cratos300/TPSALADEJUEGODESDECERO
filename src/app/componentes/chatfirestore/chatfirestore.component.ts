@@ -13,15 +13,19 @@ export class ChatfirestoreComponent implements OnInit {
   
   nuevoMensaje: MensajeChat;
   ver:any; 
+  data:any;
   
   constructor(private servicioFirestore:MensajesFirestoreService,private servicioRealTime:MensajesRealtimeService) {
     this.nuevoMensaje = new MensajeChat();
+   
    }
 
   ngOnInit(): void {
   }
 
   EnviarMensaje() {
+   
+    this.data = "";
     this.nuevoMensaje.fecha = new Date().toLocaleString();
     this.ver = localStorage.getItem("usuario");
     this.ver = JSON.parse(this.ver);
@@ -33,6 +37,7 @@ export class ChatfirestoreComponent implements OnInit {
       console.log("se envio el mensaje Fire");
       this.nuevoMensaje.mensaje = "";
     });
+    
 
     this.servicioRealTime.create(this.nuevoMensaje).then(()=>{
       console.log("se envio el mensaje RealTime");
