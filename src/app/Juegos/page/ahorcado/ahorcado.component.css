@@ -5,8 +5,8 @@ img
 }
 .divPrincipal
 {
-    background-color: chocolate;
     height: 100vh;
+    background-color: chocolate;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,7 +40,7 @@ tr button
 {
     display: flex;
     align-items: center;
-    justify-content:space-around;
+    justify-content:start;
 }
 .soloBoton
 {

@@ -1,12 +1,12 @@
 <div *ngIf = "notermino">
     <div class="divSecundario">
-        <img *ngIf = "contador == 0" src="../../../../assets/imagenAhorcado/inicial.jpg" alt="">
-        <img *ngIf = "contador == 1" src="../../../../assets/imagenAhorcado/primerError.jpg" alt="">
-        <img *ngIf = "contador == 2" src="../../../../assets/imagenAhorcado/segundoError.jpg" alt="">
-        <img *ngIf = "contador == 3" src="../../../../assets/imagenAhorcado/terceroError.jpg" alt="">
-        <img *ngIf = "contador == 4" src="../../../../assets/imagenAhorcado/cuartoError.jpg" alt="">
-        <img *ngIf = "contador == 5" src="../../../../assets/imagenAhorcado/quintoError.jpg" alt="">
-        <img *ngIf = "contador == 6" src="../../../../assets/imagenAhorcado/ErrorFinal.jpg" alt="">
+        <img *ngIf = "contador == 0" src="../../../../assets/imagenAhorcado/inicial.png" alt="">
+        <img *ngIf = "contador == 1" src="../../../../assets/imagenAhorcado/primerError.png" alt="">
+        <img *ngIf = "contador == 2" src="../../../../assets/imagenAhorcado/segundoError.png" alt="">
+        <img *ngIf = "contador == 3" src="../../../../assets/imagenAhorcado/tercerError.png" alt="">
+        <img *ngIf = "contador == 4" src="../../../../assets/imagenAhorcado/cuartoError.png" alt="">
+        <img *ngIf = "contador == 5" src="../../../../assets/imagenAhorcado/quintoError.png" alt="">
+        <img *ngIf = "contador == 6" src="../../../../assets/imagenAhorcado/ErrorFinal.png" alt="">
         <h1>{{aux2}}</h1>
     </div>
     <div class="centrar">
@@ -28,7 +28,7 @@
                 <button (click) = "click('L')" [disabled] = "statel">L</button>
                 <button (click) = "click('M')" [disabled] = "statem">M</button>
                 <button (click) = "click('N')" [disabled] = "staten">N</button>
-                <button (click) = "click('Ñ')" disabled = "stateñ">Ñ</button>
+                <button (click) = "click('Ñ')" [disabled] =  "l">Ñ</button>
                 <button (click) = "click('O')" [disabled] = "stateo">O</button>
                 <button (click) = "click('P')" [disabled] = "statep">P</button>
                 <button (click) = "click('Q')" [disabled] = "stateq">Q</button>
@@ -45,7 +45,6 @@
                 <button (click) = "click('Z')" [disabled] = "statez">Z</button>
             </tr>
         </table>
-        <button class="btn btn-primary soloBoton">INICIAR</button>
     </div>
 </div>
 <div *ngIf = "!notermino" class="divPrincipal">

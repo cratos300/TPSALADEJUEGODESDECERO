@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./ahorcado.component.css']
 })
 export class AhorcadoComponent implements OnInit {
-
+  l:boolean = false;
   statea:boolean = false;
   stateb:boolean = false;
   statec:boolean = false;
@@ -22,7 +22,6 @@ export class AhorcadoComponent implements OnInit {
   statel:boolean = false;
   statem:boolean = false;
   staten:boolean = false;
-  stateñ:boolean = false;
   stateo:boolean = false;
   statep:boolean = false;
   stateq:boolean = false;
@@ -309,7 +308,7 @@ export class AhorcadoComponent implements OnInit {
               this.aux2 = this.cadenita;
         break;
         case 'Ñ':
-              this.stateñ = true;
+              this.l = true;
               this.buscarletraymodificarla('Ñ');
               this.aux2 = this.cadenita;
         break;
@@ -397,7 +396,7 @@ export class AhorcadoComponent implements OnInit {
     this.statel = false;
     this.statem = false;
     this.staten = false;
-    this.stateñ = false;
+    this.l = false;
     this.stateo = false;
     this.statep = false;
     this.stateq = false;
