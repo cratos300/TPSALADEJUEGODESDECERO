@@ -21,6 +21,8 @@ h1
 {
   text-align: center;
   display: block;
+  height: 100vh;
+  
 }
 .costado
 {
@@ -30,7 +32,7 @@ h1
 }
 .primerdiv
 {
-    margin-top: 100px;
+    margin-top: 50px;
 }
 .p
 {
@@ -55,4 +57,23 @@ h2
 {
     display: inline-block;
     margin-left: 15px;
+}
+.det:hover
+{
+    transform: scale(1.5);
+}
+.coloress
+{
+    color:white;
+    display: inline-block;
+    background-color: black;
+
+}
+.ec 
+{
+    border: black solid 5px;
+}
+.z
+{
+    display: block;
 }

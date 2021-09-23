@@ -11,7 +11,6 @@ import { MensajesService } from 'src/app/services/mensajes.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
- 
   email:string = "";
   resultado:any;
   bol : boolean = true;

@@ -17,7 +17,6 @@ export class ChatfirestoreComponent implements OnInit {
   
   constructor(private servicioFirestore:MensajesFirestoreService,private servicioRealTime:MensajesRealtimeService) {
     this.nuevoMensaje = new MensajeChat();
-   
    }
 
   ngOnInit(): void {

@@ -7,7 +7,7 @@ import { environment } from "../../environments/environment";
 })
 export class HttpService {
 
-  private url = "https://restcountries.eu/rest/v2/regionalbloc/usan";
+  private url = "https://restcountries.eu/rest/v2/all";
   constructor(private http:HttpClient) { }
 
   obtenerImagenes(){
